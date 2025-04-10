@@ -14,28 +14,33 @@ export default function manifest(): MetadataRoute.Manifest {
                 src: '/icon-144x144.png',
                 sizes: '144x144',
                 type: 'image/png',
-                purpose: 'maskable',
+                purpose: 'any',
             },
             {
                 src: '/icon-192x192.png',
                 sizes: '192x192',
                 type: 'image/png',
-                purpose: 'maskable',
+                purpose: 'any',
             },
             {
                 src: '/icon-512x512.png',
                 sizes: '512x512',
                 type: 'image/png',
-                purpose: 'maskable',
+                purpose: 'any',
             },
         ],
         screenshots: [
             {
                 src: "/mq-pi.vercel.app_.png",
-                sizes: "800x1680",
+                sizes: "1120x1604",
                 type: "image/png",
                 form_factor: 'wide',
-            }
+            },
+            {
+                src: "/mq-pi.vercel.app.png",
+                sizes: "800x1680",
+                type: "image/png",
+            },
         ]
     }
 }
