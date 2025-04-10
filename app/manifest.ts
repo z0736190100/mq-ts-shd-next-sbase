@@ -12,7 +12,7 @@ export default function manifest(): MetadataRoute.Manifest {
         icons: [
             {
                 src: '/icon-144x144.png',
-                sizes: '192x192',
+                sizes: '144x144',
                 type: 'image/png',
                 purpose: 'maskable',
             },
@@ -34,6 +34,7 @@ export default function manifest(): MetadataRoute.Manifest {
                 src: "/mq-pi.vercel.app_.png",
                 sizes: "800x1680",
                 type: "image/png",
+                form_factor: 'wide',
             }
         ]
     }
