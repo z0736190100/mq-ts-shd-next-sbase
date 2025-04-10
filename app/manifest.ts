@@ -11,6 +11,12 @@ export default function manifest(): MetadataRoute.Manifest {
         theme_color: '#000000',
         icons: [
             {
+                src: '/icon-144x144.png',
+                sizes: '192x192',
+                type: 'image/png',
+                purpose: 'maskable',
+            },
+            {
                 src: '/icon-192x192.png',
                 sizes: '192x192',
                 type: 'image/png',
@@ -23,5 +29,12 @@ export default function manifest(): MetadataRoute.Manifest {
                 purpose: 'maskable',
             },
         ],
+        screenshots: [
+            {
+                src: "/mq-pi.vercel.app_.png",
+                sizes: "800x1680",
+                type: "image/png",
+            }
+        ]
     }
 }
