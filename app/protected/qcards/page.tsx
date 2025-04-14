@@ -18,6 +18,8 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import {Badge} from "@/components/ui/badge";
+import Qcard from "@/components/Qcard";
 
 
 interface QCard {
@@ -44,22 +46,9 @@ export default function Page() {
                     qcards?.map((card, index) => {
                         return (
                             <CarouselItem key={index}>
-                                <Card>
-                                    <CardHeader>
-                                        <CardTitle/>
-                                        <CardDescription>
-                                            {card.headscontent}
-                                        </CardDescription>
-                                    </CardHeader>
-                                    <CardContent>
-                                        {card.tailscontent} {/*<p>{JSON.stringify(notes, null, 2)}</p>*/}
-                                    </CardContent>
-                                    <CardFooter>
-                                        tags here
-                                    </CardFooter>
-                                </Card>
+                                <Qcard cardContent={card}/>
                             </CarouselItem>
-                        )
+                        );
                     })
                 }
             </CarouselContent>
