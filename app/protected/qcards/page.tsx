@@ -26,13 +26,13 @@ interface QCard {
 }
 
 export default function Page() {
-    const [notes, setNotes] = useState<QCard[]>([{headscontent: "", tailscontent: ""}]);
+    const [qcards, setQcards] = useState<QCard[] | null>();
     const supabase = createClient()
 
     useEffect(() => {
         const getData = async () => {
             const {data} = await supabase.from('qcards').select()
-            setNotes(data)
+            setQcards(data)
         }
         getData()
     }, [])
@@ -41,7 +41,7 @@ export default function Page() {
         <Carousel>
             <CarouselContent>
                 {
-                    notes.map((card, index) => {
+                    qcards?.map((card, index) => {
                         return (
                             <CarouselItem key={index}>
                                 <Card>
