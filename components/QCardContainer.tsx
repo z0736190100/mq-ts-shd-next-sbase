@@ -4,16 +4,19 @@ import {useTheme} from "next-themes";
 import {useEffect, useState} from "react";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
+import {QCardEntity} from "@/app/protected/qcards/page";
 
-interface QCard {
-    headscontent: string;
-    tailscontent: string;
+
+interface Props {
+    cardContent: QCardEntity;
 }
 
-const QCard = (props) => {
-    const [isHeads, setIsHeads] = useState<boolean>(true);
+export default function QCardContainer({cardContent} : Props) {
+
     // todo:
     //const {theme, setTheme} = useTheme();
+
+    const [isHeads, setIsHeads] = useState<boolean>(true);
 
     const handleFlip = () => {
         setIsHeads(!isHeads);
@@ -30,8 +33,8 @@ const QCard = (props) => {
             <CardContent>
                 {
                     isHeads ?
-                        props.cardContent.headscontent :
-                        props.cardContent.tailscontent
+                        cardContent.headscontent :
+                        cardContent.tailscontent
                 }
             </CardContent>
             <CardFooter>
@@ -42,5 +45,3 @@ const QCard = (props) => {
         </Card>
     );
 }
-
-export default QCard;

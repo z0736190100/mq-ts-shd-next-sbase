@@ -19,16 +19,16 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 import {Badge} from "@/components/ui/badge";
-import Qcard from "@/components/Qcard";
+import QCardContainer from "@/components/QCardContainer";
 
 
-interface QCard {
+export interface QCardEntity {
     headscontent: string;
     tailscontent: string;
 }
 
 export default function Page() {
-    const [qcards, setQcards] = useState<QCard[] | null>();
+    const [qcards, setQcards] = useState<QCardEntity[] | null>();
     const supabase = createClient()
 
     useEffect(() => {
@@ -43,10 +43,10 @@ export default function Page() {
         <Carousel>
             <CarouselContent>
                 {
-                    qcards?.map((card, index) => {
+                    qcards?.map((card:QCardEntity, index) => {
                         return (
                             <CarouselItem key={index}>
-                                <Qcard cardContent={card}/>
+                                <QCardContainer cardContent={card}/>
                             </CarouselItem>
                         );
                     })
