@@ -10,7 +10,10 @@ import {QCardEntity} from "@/app/protected/qcards/page";
 interface Props {
     cardContent: QCardEntity;
 }
-
+// todo: naming convention to display purpose -
+//  this function encapsulates a component from third-party
+//  UI lib - shadcn - and visual behavior/state as result of user interaction with UI
+//  element
 export default function QCardContainer({cardContent} : Props) {
 
     // todo:
@@ -18,11 +21,13 @@ export default function QCardContainer({cardContent} : Props) {
 
     const [isHeads, setIsHeads] = useState<boolean>(true);
 
+    // todo: naming convention for handler
     const handleFlip = () => {
         setIsHeads(!isHeads);
     }
 
     return (
+        // todo: is it correct passing onClick this way in this use case?
         <Card onClick={handleFlip}>
             <CardHeader>
                 <CardTitle/>
@@ -31,6 +36,7 @@ export default function QCardContainer({cardContent} : Props) {
                 </CardDescription>
             </CardHeader>
             <CardContent>
+                // content that depends on state:
                 {
                     isHeads ?
                         cardContent.headscontent :
