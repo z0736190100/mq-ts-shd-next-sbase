@@ -6,7 +6,7 @@ import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} f
 import {Badge} from "@/components/ui/badge";
 import {QCardEntity} from "@/app/protected/qcards/page";
 
-
+// todo TS props typization - do the RIGHT way
 interface Props {
     cardContent: QCardEntity;
 }
